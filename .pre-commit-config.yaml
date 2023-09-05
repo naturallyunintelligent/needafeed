@@ -1,0 +1,33 @@
+default_language_version:
+  python: python3.10
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        name: black (via python 3)
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0 # Use the ref you want to point at
+    hooks:
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: check-ast
+      - id: check-docstring-first
+      - id: requirements-txt-fixer
+      - id: debug-statements
+      - id: check-merge-conflict
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0 # Use the sha / tag you want to point at
+    hooks:
+      - id: flake8
+  - repo: https://github.com/jendrikseipp/vulture
+    rev: v2.7
+    hooks:
+      - id: vulture
